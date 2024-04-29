@@ -50,7 +50,7 @@ namespace Takvim_API.Repositories.Concrete
 
         public async Task<List<Takvim>> GetEventByDate(DateTime start)
         {
-            return await _takvim.Find(x => x.Start == start).ToListAsync();
+            return await _takvim.Find(x => x.Start.Day == start.Day).ToListAsync();
         }
     }
 }

@@ -111,7 +111,7 @@ namespace Takvim_API.Controllers
         }
         //Tarihe göre Getirme yapılacak
 
-        [HttpGet("geteventbyTarih")]
+        [HttpGet("geteventbydate")]
         public async Task<ActionResult> GetEventByDate(DateTime start) 
         {
             try
