@@ -2,6 +2,10 @@ using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using Takvim_API.Data.MongoDbContext;
 using Takvim_API.Models;
+using Takvim_API.Repositories.Abstract;
+using Takvim_API.Repositories.Concrete;
+using Takvim_API.Services.Abstarct;
+using Takvim_API.Services.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +19,9 @@ builder.Services.AddSingleton<MongoDbContext>(serviceProvider =>
     var database = client.GetDatabase(settings.DatabaseName);
     return new MongoDbContext(database);
 });
+//Services - Repository
+builder.Services.AddScoped<ITakvimRepository, TakvimRepository>();
+builder.Services.AddScoped<ITakvimServices, TakvimServices>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

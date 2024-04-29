@@ -43,5 +43,14 @@ namespace Takvim_API.Repositories.Concrete
         {
             await _takvim.DeleteOneAsync(x => x._id == takvimid);
         }
+        public async Task<Takvim> GetEventById(string id)
+        {
+            return await _takvim.Find(x => x._id == id).FirstOrDefaultAsync();
+        }
+
+        public async Task<List<Takvim>> GetEventByDate(DateTime start)
+        {
+            return await _takvim.Find(x => x.Start == start).ToListAsync();
+        }
     }
 }

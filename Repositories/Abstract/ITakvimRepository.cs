@@ -12,5 +12,12 @@ namespace Takvim_API.Repositories.Abstract
         Task<bool> UpdateEvent(string takvimid, Takvim updatetakvim);
         //Delete
         Task DeleteEvent(string takvimid);
+
+        //GetEventById
+        Task<Takvim> GetEventById(string id);
+
+        //GetEventByDate
+
+        Task<List<Takvim>> GetEventByDate(DateTime start);
     }
 }
