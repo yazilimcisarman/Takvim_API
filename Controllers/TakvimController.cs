@@ -64,6 +64,7 @@ namespace Takvim_API.Controllers
                 return BadRequest(new {success=false, message = ex.Message});
             }
         }
+        //Değişiklik yapıldı.
         [HttpPost("updateevent")]
         public async Task<IActionResult> UpdateEvent(string id, TakvimViewModel takvim)
         {
