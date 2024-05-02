@@ -36,6 +36,7 @@ namespace Takvim_API.Controllers
 
         //_id değeri göndermeden iletim yapmamız gerekiyor. - TakvimviewModel Oluşturduk
         //Tarih değerlerini düzenleme  yapıcaz // String tarih alıp Parse ile datetime a çevirdik //Saat bilgisini almıyoruz.
+        //Bu değişiklik github üzerinden yapıldı
         [HttpPost("createevent")]
         public async Task<IActionResult> CreateEvent(TakvimViewModel takvim)
         {
