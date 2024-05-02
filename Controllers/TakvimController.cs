@@ -16,6 +16,7 @@ namespace Takvim_API.Controllers
         }
         //Services çözümlenemedi. Program.csye ekledik.
         //Takvim endpointinid düzenle.
+        //vscodes github üzerinden değişklik yapıldı
         [HttpGet("getallevent")]
         public async Task<ActionResult> GetAllEvent()
         {

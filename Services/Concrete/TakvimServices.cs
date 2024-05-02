@@ -17,7 +17,6 @@ namespace Takvim_API.Services.Concrete
         {
             return await _repository.GetTakvim();
         }
-
         public async Task<bool> CreateEvent(Takvim takvim)
         {
             var result = await _repository.CreateEvent(takvim);
